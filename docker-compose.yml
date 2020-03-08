@@ -1,0 +1,8 @@
+  app:
+    build: docker/app
+    volumes: 
+      - .:/app
+  composer:
+    build: docker/composer
+    environment:
+      COMPOSER_CACHE_DIR: /tmp/cache

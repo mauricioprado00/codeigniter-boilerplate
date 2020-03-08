@@ -1,0 +1,28 @@
+{
+    "name": "mauricioprado00/phpunit-boilerplace",
+    "type": "project",
+    "license": "proprietary",
+    "homepage": "https://github.com/mauricioprado00/phpunit-boilerplate",
+    "description": "PHPunit boilerplate",
+    "authors": [
+        {
+            "name": "Hugo Mauricio Prado Macat"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "~4.1"
+    },
+    "include-path": [
+    ],
+    "autoload": {
+        "files": [
+            "/app/init.php"
+        ],
+        "psr-4": {
+            "MyApp\\":[
+                "src/MyApp",
+                "test/MyApp"
+            ]
+        }
+    }
+}
