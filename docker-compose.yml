@@ -31,6 +31,7 @@ services:
       - ./public_html:/var/www/html/
       - ./docker/web0/conf/ssl/ssl-cert-snakeoil.pem:/etc/ssl/certs/ssl-cert-snakeoil.pem
       - ./docker/web0/conf/ssl/ssl-cert-snakeoil.key:/etc/ssl/private/ssl-cert-snakeoil.key
+      - ./docker/web0/filesystem/var/www/html/.htaccess:/var/www/html/.htaccess
       - ./docker/web0/filesystem/var/www/html/application/config/database.php:/var/www/html/application/config/database.php
       - ./src/ci/controllers/:/var/www/html/application/controllers/
       - ./src/ci/models/:/var/www/html/application/models/
