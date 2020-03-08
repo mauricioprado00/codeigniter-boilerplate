@@ -1,3 +1,7 @@
+version: '2'
+
+services:
+
   phpunit:
     build: docker/phpunit
     volumes: 
@@ -18,3 +22,14 @@
       - ./data/:/data/
       - ./config/mysql0/custom-entrypoint.sh:/custom-entrypoint.sh
       - ./db-structure.sql:/docker-entrypoint-initdb.d/01-init.sql
+
+  web0:
+    build: docker/web0
+    ports:
+      - "80:80"
+    volumes: 
+      - ./public_html:/var/www/html/
+      - ./docker/web0/conf/ssl/ssl-cert-snakeoil.pem:/etc/ssl/certs/ssl-cert-snakeoil.pem
+      - ./docker/web0/conf/ssl/ssl-cert-snakeoil.key:/etc/ssl/private/ssl-cert-snakeoil.key
+    depends_on:
+      - mysql0

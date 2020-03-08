@@ -27,3 +27,10 @@ docker-compose up -d mysql0
 ```
 ./db.sh
 ```
+
+
+# start web server
+```
+docker-compose up -d web0
+```
+then navigate to http://localhost
