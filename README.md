@@ -33,4 +33,4 @@ docker-compose up -d mysql0
 ```
 docker-compose up -d web0
 ```
-then navigate to http://localhost
+then navigate to http://localhost/news
