@@ -29,6 +29,7 @@ services:
       - "80:80"
     volumes: 
       - ./public_html:/var/www/html/
+      - .:/app/
       - ./docker/web0/conf/ssl/ssl-cert-snakeoil.pem:/etc/ssl/certs/ssl-cert-snakeoil.pem
       - ./docker/web0/conf/ssl/ssl-cert-snakeoil.key:/etc/ssl/private/ssl-cert-snakeoil.key
       - ./docker/web0/filesystem/var/www/html/.htaccess:/var/www/html/.htaccess
@@ -37,6 +38,7 @@ services:
       - ./src/ci/models/:/var/www/html/application/models/
       - ./src/ci/views/:/var/www/html/application/views/
       - ./src/ci/config/routes.php:/var/www/html/application/config/routes.php
+      - ./src/ci/config/config.php:/var/www/html/application/config/config.php
     depends_on:
       - mysql0
     env_file: .env
