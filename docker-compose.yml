@@ -40,9 +40,3 @@ services:
     depends_on:
       - mysql0
     env_file: .env
-    environment:
-      # only for first installation - if someone uses docker-compose up instead of bin/console.sh install
-      MYSQL_DATABASE: ${DATABASE_NAME}
-      MYSQL_USER: ${DATABASE_USER}
-      MYSQL_PASSWORD: ${DATABASE_PASSWORD}
-      MYSQL_HOST: mysql0

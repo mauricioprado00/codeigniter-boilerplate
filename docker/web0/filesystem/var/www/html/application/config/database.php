@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => $_ENV['MYSQL_HOST'],
-	'username' => $_ENV['MYSQL_USER'],
-	'password' => $_ENV['MYSQL_PASSWORD'],
-	'database' => $_ENV['MYSQL_DATABASE'],
+	'hostname' => $_ENV['DATABASE_HOST'],
+	'username' => $_ENV['DATABASE_USER'],
+	'password' => $_ENV['DATABASE_PASSWORD'],
+	'database' => $_ENV['DATABASE_NAME'],
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
@@ -94,4 +94,3 @@ $db['default'] = array(
 	'failover' => array(),
 	'save_queries' => TRUE
 );
-
