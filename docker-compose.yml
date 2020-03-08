@@ -20,7 +20,7 @@ services:
       MYSQL_PASSWORD: ${DATABASE_PASSWORD}
     volumes:
       - ./data/:/data/
-      - ./config/mysql0/custom-entrypoint.sh:/custom-entrypoint.sh
+      - ./docker/mysql0/custom-entrypoint.sh:/custom-entrypoint.sh
       - ./db-structure.sql:/docker-entrypoint-initdb.d/01-init.sql
 
   web0:
