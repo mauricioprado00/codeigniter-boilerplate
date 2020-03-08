@@ -6,3 +6,15 @@
     build: docker/composer
     environment:
       COMPOSER_CACHE_DIR: /tmp/cache
+  mysql0:
+    image: mysql:5.7
+    env_file: .env
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DATABASE_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${DATABASE_NAME}
+      MYSQL_USER: ${DATABASE_USER}
+      MYSQL_PASSWORD: ${DATABASE_PASSWORD}
+    volumes:
+      - ./data/:/data/
+      - ./config/mysql0/custom-entrypoint.sh:/custom-entrypoint.sh
+      - ./db-structure.sql:/docker-entrypoint-initdb.d/01-init.sql
